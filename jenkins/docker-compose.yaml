@@ -12,7 +12,10 @@ services:
       - /Users/musatai/Jenkins/jenkins_home:/var/jenkins_home
     networks:
       - jenkins
+      - creds-api
 
 networks:
   jenkins:
     name: jenkins
+  creds-api:
+    name: creds-api
