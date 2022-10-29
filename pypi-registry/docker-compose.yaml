@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  pypi-registry:
+    container_name: pypi-registry
+    image: musatai/pypi-registry:1.0.0
+    ports:
+      - 4000:4000
+    networks:
+      - pypi-registry
+    volumes:
+      - /Users/musatai/Code/infra-as-code/pypi-local-packages:/usr/app/packages
+
+networks:
+  pypi-registry:
+    name: pypi-registry

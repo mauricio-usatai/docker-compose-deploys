@@ -1,0 +1,18 @@
+services:
+  pornhub-metrics-collector:
+    image: musatai/pornhub-metrics-collector:1.0.0
+    container_name: pornhub-metrics-collector
+    environment:
+      - MONGO_SERVER=mongo
+      - MONGO_PORT=27017
+      - BIN_ID=${BIN_ID}
+      - BIN_API_KEY=${BIN_API_KEY}
+    networks:
+      - pornhub-metrics-collector
+      - mongo
+
+networks:
+  pornhub-metrics-collector:
+    name: pornhub-metrics-collector
+  mongo:
+    name: mongo

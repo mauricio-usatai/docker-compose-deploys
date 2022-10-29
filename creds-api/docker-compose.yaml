@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  creds-api:
+    container_name: creds-api
+    image: musatai/creds-api:1.0.0
+    ports:
+      - 8081:8081
+    networks:
+      - creds-api
+      - mongo
+    environment:
+      - MONGO_URL=mongo
+      - MONGO_PORT=27017
+      - APP_PORT=8081
+
+networks:
+  creds-api:
+    name: creds-api
+  mongo:
+    name: mongo

@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  mongo:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    container_name: mongo
+    volumes: 
+      - /Users/musatai/MongoStorage/Pornhub:/data/db
+    networks:
+      - mongo
+
+networks:
+  mongo:
+    name: mongo
