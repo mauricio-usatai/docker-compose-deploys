@@ -6,7 +6,7 @@ services:
     environment:
       - SELENIUM_SERVER=selenium-chrome
       - SELENIUM_PORT=4444
-      - USERNAME=${PH_USERNAME}
+      - PH_USERNAME=${PH_USERNAME}
       - PASSWORD=${PASSWORD}
     networks:
       - selenium-chrome
