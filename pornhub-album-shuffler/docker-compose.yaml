@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   pornhub-album-shuffler:
-    image: musatai/pornhub-album-shuffler:1.0.0
+    image: musatai/pornhub-album-shuffler:${VERSION}
     container_name: pornhub-album-shuffler
     environment:
       - SELENIUM_SERVER=selenium-chrome
