@@ -19,7 +19,7 @@ services:
       - FREQUENCY=${FREQUENCY}
 
 networks:
-  - insta-scrapper:
+  insta-scrapper:
     name: insta-scrapper
-  - monitoring-agent:
+  monitoring-agent:
     name: monitoring-agent
