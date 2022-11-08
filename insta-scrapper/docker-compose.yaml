@@ -7,7 +7,7 @@ services:
       - insta-scrapper
       - monitoring-agent
     volumes:
-      - /Users/musatai/Code/pd/insta-lister/files:/app/files
+      - /Users/musatai/Code/pd/insta-scrapper/files:/app/files
     environment:
       - USERNAME=${USERNAME}
       - PASSWORD=${PASSWORD}
