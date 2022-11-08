@@ -8,10 +8,11 @@ services:
     networks:
       - monitoring-agent
     environment:
-      - ACCESS_KEY_ID=ACCESS_KEY_ID
-      - SECRET_ACCESS_KEY=SECRET_ACCESS_KEY
-      - MEMORY_DB_URL=MEMORY_DB_URL
-      - MACHINE_NAME=MACHINE_NAME
+      - ACCESS_KEY_ID=${ACCESS_KEY_ID}
+      - SECRET_ACCESS_KEY=${SECRET_ACCESS_KEY}
+      - MEMORY_DB_URL=${MEMORY_DB_URL}
+      - MACHINE_NAME=${MACHINE_NAME}
+      - VERSION=${VERSION}
 
 networks:
   monitoring-agent:
