@@ -13,9 +13,12 @@ services:
     networks:
       - jenkins
       - creds-api
+      - pypi-registry
 
 networks:
   jenkins:
     name: jenkins
   creds-api:
     name: creds-api
+  pypi-registry:
+    name: pypi-registry
