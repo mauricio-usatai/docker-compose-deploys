@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  monitoring-agent:
+    container_name: monitoring-agent
+    image: musatai/monitoring-agent:${VERSION}
+    ports:
+      - 8084:8084
+    networks:
+      - monitoring-agent
+    environment:
+      - ACCESS_KEY_ID=ACCESS_KEY_ID
+      - SECRET_ACCESS_KEY=SECRET_ACCESS_KEY
+      - MEMORY_DB_URL=MEMORY_DB_URL
+      - MACHINE_NAME=MACHINE_NAME
+
+networks:
+  monitoring-agent:
+    name: monitoring-agent
