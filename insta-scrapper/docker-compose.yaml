@@ -6,6 +6,7 @@ services:
     networks:
       - insta-scrapper
       - monitoring-agent
+      - pypi-registry
     volumes:
       - /Users/musatai/Code/pd/insta-scrapper/files:/app/files
     environment:
@@ -23,3 +24,5 @@ networks:
     name: insta-scrapper
   monitoring-agent:
     name: monitoring-agent
+  pypi-registry:
+    name: pypi-registry
