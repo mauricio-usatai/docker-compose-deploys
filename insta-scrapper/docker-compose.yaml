@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+  insta-scrapper:
+    container_name: insta-scrapper
+    image: musatai/insta-scrapper:${VERSION}
+    networks:
+      - insta-scrapper
+      - monitoring-agent
+    volumes:
+      - /Users/musatai/Code/pd/insta-lister/files:/app/files
+    environment:
+      - USERNAME=${USERNAME}
+      - PASSWORD=${PASSWORD}
+      - TARGET_PROFILE_ID=${TARGET_PROFILE_ID}
+      - APP_NAME=${APP_NAME}
+      - MACHINE_NAME=${MACHINE_NAME}
+      - DB_ACCESS_KEY_ID=${DB_ACCESS_KEY_ID}
+      - DB_SECRET_ACCESS_KEY=${DB_SECRET_ACCESS_KEY}
+      - FREQUENCY=${FREQUENCY}
+
+networks:
+  - insta-scrapper:
+    name: insta-scrapper
+  - monitoring-agent:
+    name: monitoring-agent
