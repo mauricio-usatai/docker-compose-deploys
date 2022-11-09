@@ -1,18 +1,27 @@
 services:
   pornhub-metrics-collector:
-    image: musatai/pornhub-metrics-collector:1.0.0
+    image: musatai/pornhub-metrics-collector:${VERSION}
     container_name: pornhub-metrics-collector
     environment:
       - MONGO_SERVER=mongo
       - MONGO_PORT=27017
       - BIN_ID=${BIN_ID}
       - BIN_API_KEY=${BIN_API_KEY}
+      - BIN_URL=${BIN_URL}
+      - APP_NAME=${APP_NAME}
+      - MACHINE_NAME=${MACHINE_NAME}
+      - DB_ACCESS_KEY_ID=${DB_ACCESS_KEY_ID}
+      - DB_SECRET_ACCESS_KEY=${DB_SECRET_ACCESS_KEY}
+      - FREQUENCY=${FREQUENCY}
     networks:
       - pornhub-metrics-collector
       - mongo
+      - monitoring-agent
 
 networks:
   pornhub-metrics-collector:
     name: pornhub-metrics-collector
   mongo:
     name: mongo
+  monitoring-agent:
+    name: monitoring-agent
