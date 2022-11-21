@@ -1,0 +1,21 @@
+version: '3.9'
+services:
+  ymir-server:
+    container_name: ymir-server
+    image: musatai/ymir-server:${VERSION}
+    ports:
+      - 8085:8085
+    environment:
+      - VERSION=${VERSION}
+      - CHALLENGES_NUM=${CHALLENGES_NUM}
+      - ENV=${ENV}
+    networks:
+      - ymir-server
+      - monitoring-agent
+
+networks:
+  ymir-server:
+    name: ymir-server
+  monitoring-agent:
+    name: monitoring-agent
+
