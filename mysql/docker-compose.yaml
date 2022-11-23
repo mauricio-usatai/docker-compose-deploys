@@ -9,6 +9,8 @@ services:
       - /Users/musatai/MongoStorage/MysqlStorage/logger:/var/lib/mysql
     networks:
       - mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=123
 
 networks:
   mysql:
