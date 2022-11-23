@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    volumes:
+      - /Users/musatai/MongoStorage/MysqlStorage/logger:/var/lib/mysql
+    networks:
+      - mysql
+
+networks:
+  mysql:
+    name: mysql
