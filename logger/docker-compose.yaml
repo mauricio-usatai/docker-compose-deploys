@@ -1,0 +1,27 @@
+version: '3.9'
+services:
+  logger:
+    container_name: logger
+    image: musatai/logger:${VERSION}
+    networks:
+      - logger
+      - mysql
+      - rabbitmq
+    environment:
+      - QUEUE_URL=${QUEUE_URL}
+      - QUEUE_PORT=${QUEUE_PORT}
+      - DATABASE_URL=${DATABASE_URL}
+      - DATABASE_PORT=${DATABASE_PORT}
+      - DATABASE_USER=${DATABASE_USER}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - EXCHANGE=${EXCHANGE}
+      - QUEUE=${QUEUE}
+      - DATABASE=${DATABASE}
+
+networks:
+  logger:
+    name: logger
+  mysql:
+    name: mysql
+  rabbitmq:
+    name: rabbitmq
