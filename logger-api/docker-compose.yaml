@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+  logger-api:
+    container_name: logger-api
+    image: musatai/logger-api:${VERSION}
+    ports:
+      - 8087:8087
+    networks:
+      - logger-api
+      - mysql
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - DATABASE_PORT=${DATABASE_PORT}
+      - DATABASE_USER=${DATABASE_USER}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE=${DATABASE}
+
+networks:
+  logger-api:
+    name: logger-api
+  mysql:
+    name: mysql

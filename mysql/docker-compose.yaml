@@ -6,11 +6,9 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - /Users/musatai/MongoStorage/MysqlStorage/logger:/var/lib/mysql
+      - /Users/musatai/MysqlStorage/logger:/var/lib/mysql
     networks:
       - mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=123
 
 networks:
   mysql:
