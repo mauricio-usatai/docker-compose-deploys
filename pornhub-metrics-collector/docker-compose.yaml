@@ -8,6 +8,7 @@ services:
       - BIN_ID=${BIN_ID}
       - BIN_API_KEY=${BIN_API_KEY}
       - BIN_URL=${BIN_URL}
+      - BIN_PORT=${BIN_PORT}
       - APP_NAME=${APP_NAME}
       - MACHINE_NAME=${MACHINE_NAME}
       - DB_ACCESS_KEY_ID=${DB_ACCESS_KEY_ID}
