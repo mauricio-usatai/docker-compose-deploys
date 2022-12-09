@@ -11,7 +11,7 @@ services:
     networks:
       - selenium-chrome
       - pornhub-album-shuffler
-    restart: unless-stoped
+    restart: unless-stopped
 
 networks:
   selenium-chrome:
